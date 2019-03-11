@@ -1,0 +1,9 @@
+# Convert the decimal returns into percentage returns
+percent_return = StockPrices['Returns']*100
+
+# Drop the missing values
+returns_plot = percent_return.dropna()
+
+# Plot the returns histogram
+plt.hist(returns_plot, bins=75)
+plt.show()
