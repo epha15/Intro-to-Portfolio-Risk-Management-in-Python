@@ -2,6 +2,7 @@
 import pandas as pd
 
 # Read in the csv file and parse dates
+# fpath_csv is a URL that contains the csv
 StockPrices = pd.read_csv(fpath_csv, parse_dates=['Date'])
 
 # Ensure the prices are sorted by Date
