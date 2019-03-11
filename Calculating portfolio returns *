@@ -1,0 +1,14 @@
+# Finish defining the portfolio weights as a numpy array
+portfolio_weights = np.array([0.12, 0.15, 0.08, 0.05, 0.09, 0.10, 0.11, 0.14, 0.16])
+
+# Calculate the weighted stock returns
+# StockReturns are panda dataframe of daily returns of the 9 stocks
+WeightedReturns = StockReturns.mul(portfolio_weights, axis=1)
+
+# Calculate the portfolio returns
+StockReturns['Portfolio'] = WeightedReturns.sum(axis=1)
+
+# Plot the cumulative portfolio returns over time
+CumulativeReturns = ((1+StockReturns["Portfolio"]).cumprod()-1)
+CumulativeReturns.plot()
+plt.show()
