@@ -1,0 +1,6 @@
+def cum_ret_plot(cols):
+    cum_ret = ((1+cols).cumprod()-1)
+    return cum_ret.plot()
+    
+cum_ret_plot(StockReturns[['Portfolio', 'Portfolio_EW']])
+plt.show()
