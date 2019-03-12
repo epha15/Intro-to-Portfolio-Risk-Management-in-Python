@@ -2,5 +2,11 @@
 import numpy as np
 
 # Calculate the portfolio standard deviation
+# .T is transposing the matrix
+# np.dot is multiplication matrix
+# say there are 5 stocks. 
+# cov_mat_annual = 5x5 matrices; portfolio_weights = 1x5 matrices
+# np.dot(cov_mat_annual, portfolio_weights = np.dot (5x5, 1x5) = 1x5 matrix
+# np.dpt(portfolio_weights.T, results above) = np.dot(5x1, 1x5) = 1x1 matrix (1 std number)
 portfolio_volatility = np.sqrt(np.dot(portfolio_weights.T, np.dot(cov_mat_annual, portfolio_weights)))
 print(portfolio_volatility)
