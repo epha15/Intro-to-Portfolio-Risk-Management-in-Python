@@ -1,0 +1,15 @@
+# Import statsmodels.formula.api
+import statsmodels.formula.api as smf 
+
+# Define the regression formula
+#https://www.statsmodels.org/stable/example_formulas.html
+# You can do multiple regression - check link above
+CAPM_model = smf.ols(formula='Portfolio_Excess ~ Market_Excess', data=FamaFrenchData)
+
+# Print adjusted r-squared of the fitted regression
+CAPM_fit = CAPM_model.fit()
+print(CAPM_fit.rsquared_adj)
+
+# Extract the beta
+regression_beta = CAPM_fit.params['Market_Excess']
+print(regression_beta)
