@@ -1,0 +1,15 @@
+# Set the simulation parameters
+mu = np.mean(StockReturns)
+vol = np.std(StockReturns)
+T = 252
+S0= 10
+
+# Add one to the random returns
+rand_rets = np.random.normal(mu,vol,T) + 1
+
+# Forecasted random walk
+forecasted_values = S0 * rand_rets
+
+# Plot the random walk
+plt.plot(range(0, T), forecasted_values)
+plt.show()
